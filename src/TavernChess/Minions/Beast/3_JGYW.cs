@@ -31,7 +31,7 @@ namespace TavernChess.Minions.Beast
 
         public override MRace Race => MRace.Beast;
 
-        protected internal override void AfterAttck(int damage, MainMinion target)
+        protected internal override void AfterDoAttck(int damage, MainMinion target)
         {
             var dList = this.Companions.AliveList.Where(t => t.deathList != null && t.deathList.Count > 0).ToList();
             dList.Remove(this);

@@ -35,7 +35,7 @@ namespace TavernChess.Minions.Dragon
 
         public override MRace Race => MRace.Dragon;
 
-        protected internal override void AfterAttck(int damage, MainMinion target)
+        protected internal override void AfterDoAttck(int damage, MainMinion target)
         {
             if (damage <= target.Hp) return;
 

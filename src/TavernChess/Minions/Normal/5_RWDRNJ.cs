@@ -32,7 +32,7 @@ namespace TavernChess.Minions.Normal
 
         public override MRace Race => MRace.None;
 
-        internal override void AfterDeath(MainMinion minion)
+        internal override void AfterCallDeath(MainMinion minion)
         {
             if (minion.deathList == null || minion.deathList.Count <= 0) return;
 

@@ -30,7 +30,7 @@ namespace TavernChess.Minions.Beast
 
         public override MRace Race => MRace.Beast;
 
-        protected internal override void AfterAttck(int damage, MainMinion target)
+        protected internal override void AfterDoAttck(int damage, MainMinion target)
         {
             var before = target.Companions.GetByIndex(target.Index - 1);
             if (before != null)

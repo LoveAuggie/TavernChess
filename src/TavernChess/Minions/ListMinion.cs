@@ -138,7 +138,7 @@ namespace TavernChess.Minions
             foreach (var m in curList)
             {
                 var list = addMinions.ToList();
-                m.BeforeInsert(list);
+                m.BeforeCallInsert(list);
                 addMinions = list.ToArray();
             }
             if (index == 0)
@@ -160,7 +160,7 @@ namespace TavernChess.Minions
 
                     foreach (var curMinion in curList)
                     {
-                        curMinion.AfterInsert(m);
+                        curMinion.AfterCallInsert(m);
                     }
                 }
             else
@@ -176,7 +176,7 @@ namespace TavernChess.Minions
 
                     foreach (var curMinion in curList)
                     {
-                        curMinion.AfterInsert(m);
+                        curMinion.AfterCallInsert(m);
                     }
                 }
             return true;
@@ -186,8 +186,17 @@ namespace TavernChess.Minions
         {
             foreach (var m in this.AliveList)
             {
-                m.BeforAttack(minion);
+                m.BeforCallDoAttack(minion);
             }
+        }
+
+        internal MainMinion CallBeforeGetAttack(MainMinion mainMinion, MainMinion target)
+        {
+            foreach (var c in this.AliveList)
+            {
+                target = c.BeforeCallGotAttack(mainMinion, target);
+            }
+            return target;
         }
 
         internal void CallAfterDie(MainMinion minion)
@@ -202,7 +211,7 @@ namespace TavernChess.Minions
         {
             for (int i = 0; i < this.AliveList.Count; i++)
             {
-                this.AliveList[i].AfterDeath(minion);
+                this.AliveList[i].AfterCallDeath(minion);
             }
         }
 
@@ -220,7 +229,7 @@ namespace TavernChess.Minions
         {
             foreach (var m in this.AliveList)
             {
-                m.DivienShieldChange(value, minion);
+                m.AfterDivienShieldChange(value, minion);
             }
         }
         #endregion

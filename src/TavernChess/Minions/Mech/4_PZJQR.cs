@@ -31,7 +31,7 @@ namespace TavernChess.Minions.Mech
 
         public override MRace Race => MRace.Mech;
 
-        internal override void AfterInsert(MainMinion minion)
+        internal override void AfterCallInsert(MainMinion minion)
         {
             if (minion.Race.Is(MRace.Mech))
             {

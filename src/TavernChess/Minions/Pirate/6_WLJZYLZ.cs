@@ -33,7 +33,7 @@ namespace TavernChess.Minions.Pirate
 
         public override MRace Race => MRace.Pirate;
 
-        protected internal override void BeforAttack(MainMinion minion)
+        protected internal override void BeforCallDoAttack(MainMinion minion)
         {
             if (minion.Race.Is(MRace.Pirate))
             {

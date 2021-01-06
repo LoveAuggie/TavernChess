@@ -53,7 +53,7 @@ namespace TavernChess.Minions.Normal
             list = nList;
         }
 
-        internal override void AfterInsert(MainMinion minion)
+        internal override void AfterCallInsert(MainMinion minion)
         {
             if (minion.properties.ContainsKey(this.thisKey))
                 return;

@@ -37,7 +37,7 @@ namespace TavernChess.Minions.Normal
 
         public override bool DivienShield { get; set; } = true;
 
-        internal override void DivienShieldChange(bool value, MainMinion minion)
+        internal override void AfterDivienShieldChange(bool value, MainMinion minion)
         {
             this._attack += rCount;
         }

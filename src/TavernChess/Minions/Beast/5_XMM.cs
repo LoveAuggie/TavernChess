@@ -31,7 +31,7 @@ namespace TavernChess.Minions.Beast
 
         public override MRace Race => MRace.Beast;
 
-        internal override void BeforeInsert(List<MainMinion> minions)
+        internal override void BeforeCallInsert(List<MainMinion> minions)
         {
             foreach (var minion in minions)
             {

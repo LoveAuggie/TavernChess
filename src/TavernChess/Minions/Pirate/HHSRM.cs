@@ -31,7 +31,7 @@ namespace TavernChess.Minions.Pirate
 
         public override MRace Race => MRace.Pirate;
 
-        protected override void AfterGetAttack(int damage, MainMinion mainMinion)
+        protected override void AfterGotAttack(int damage, MainMinion mainMinion)
         {
             if (!this.isDie && this.Hp > 0)
             {
